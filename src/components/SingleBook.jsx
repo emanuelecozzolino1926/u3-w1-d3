@@ -27,6 +27,12 @@ class SingleBook extends Component {
   state = {
     selected: false,
   };
+
+  toggleBook = () => {
+    this.setState({
+      selected: !this.state.selected,
+    });
+  };
   render() {
     return (
       <Col
@@ -37,7 +43,13 @@ class SingleBook extends Component {
         key={this.props.book.asin}
         className="mt-2"
       >
-        <Card className="h-100">
+        <Card
+          className={
+            "h-100" +
+            (this.state.selected ? " border border-3 border-danger" : "")
+          }
+          onClick={this.toggleBook}
+        >
           <Card.Img
             variant="top"
             src={this.props.book.img}
