@@ -3,16 +3,16 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Welcome from "./components/Welcome";
 import SingleBook from "./components/SingleBook";
-import FantasyBook from "./components/FantasyBook";
 import Footer from "./components/Footer";
+import Fantasy from "./data/fantasy.json";
+import BookList from "./components/BookList";
 
 function App() {
   return (
     <>
       <NavBar />
       <Welcome />
-      <SingleBook />
-      <FantasyBook />
+      <BookList book={Fantasy} />
       <Footer />
     </>
   );
